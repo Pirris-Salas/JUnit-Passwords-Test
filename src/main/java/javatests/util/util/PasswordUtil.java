@@ -1,4 +1,4 @@
-package javatests.util;
+package javatests.util.util;
 
 public class PasswordUtil {
 

@@ -1,5 +1,6 @@
 package javatests.util;
 
+import javatests.util.util.StringUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
