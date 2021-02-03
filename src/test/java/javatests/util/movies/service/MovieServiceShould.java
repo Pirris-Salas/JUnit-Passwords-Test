@@ -24,13 +24,13 @@ public class MovieServiceShould {
 
         Mockito.when(movieRepository.findAll()).thenReturn(
                 Arrays.asList(
-                        new Movie(1,"Dark Knight", 152, Genre.ACTION),
-                        new Movie(2,"Memento", 113, Genre.THRILLER),
-                        new Movie(3,"There's Something About Mary", 119, Genre.COMEDY),
-                        new Movie(4,"Super 8", 112, Genre.THRILLER),
-                        new Movie(5,"Scream", 111, Genre.HORROR),
-                        new Movie(6,"Home Alone", 103, Genre.COMEDY),
-                        new Movie(1,"Matrix", 136, Genre.ACTION)
+                        new Movie(1,"Dark Knight", 152, Genre.ACTION, "Salas"),
+                        new Movie(2,"Memento", 113, Genre.THRILLER, "Luis"),
+                        new Movie(3,"There's Something About Mary", 119, Genre.COMEDY, "Mary"),
+                        new Movie(4,"Super 8", 112, Genre.THRILLER, "Super Man"),
+                        new Movie(5,"Scream", 111, Genre.HORROR, "Fernando"),
+                        new Movie(6,"Home Alone", 103, Genre.COMEDY, "Salgado"),
+                        new Movie(1,"Matrix", 136, Genre.ACTION, "Luis")
                 )
         );
         movieService = new MovieService(movieRepository);
