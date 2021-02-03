@@ -6,10 +6,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.Types;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class MovieRepositoryJdbc implements MovieRepository {
 
@@ -52,6 +51,7 @@ public class MovieRepositoryJdbc implements MovieRepository {
             Genre gen = Genre.valueOf(rowMap.get("genre").toString());
             String director = (String) rowMap.get("director");
 
+
             moviesList.add(new Movie(ID, nombre, minute, gen, director));
         });
 
@@ -77,6 +77,8 @@ public class MovieRepositoryJdbc implements MovieRepository {
 
         return moviesList;
     }
+
+
 
     private static RowMapper<Movie> movieMapper = (resultSet, rowNumb) ->
             new Movie(

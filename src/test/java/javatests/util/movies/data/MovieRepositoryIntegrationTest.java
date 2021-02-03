@@ -13,10 +13,8 @@ import org.springframework.jdbc.datasource.init.ScriptUtils;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -92,8 +90,6 @@ public class MovieRepositoryIntegrationTest {
 
         assertThat(movies, is(expectedMovies));
     }
-
-
 
     @After
     public void tearDown() throws Exception {
